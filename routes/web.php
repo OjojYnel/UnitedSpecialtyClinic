@@ -35,7 +35,8 @@ Route::Post('/addUser','EmployeeController@store');
 //Report Generation page Controller
 Route::resource('/genReport', 'ReportGenerationController');
 
-
+//Transaction Inventory Controller
+Route::resource('/inventory_transaction','InventoryTransactionController');
 
 //vaccine page Controller
 Route::resource('/createvaccine', 'VaccineController');
