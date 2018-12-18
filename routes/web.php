@@ -87,7 +87,13 @@ Route::resource('vaccinelist', 'PostVaccineTypeController' );
 
 //DYNAMIC ADD VACCINE LISTS BASED ON TYPES
 Route::POST('add_vaccine', "PostVaccineTypeController@add_vaccine");
+
+//EDIT VACCINES
 Route::POST('edit_vaccine', "PostVaccineTypeController@edit_vaccine");
+
+//ADJUST VACCINES
+Route::POST('adjust_inventory', "PostVaccineTypeController@adjust_inventory");
+
 
 //RENDERED VACCINE
 Route::resource('rendered_vaccinelist', 'RenderedVaccineController');

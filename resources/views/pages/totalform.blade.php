@@ -17,7 +17,7 @@
             </tr>
             <tr role="row">
               <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Quantity 
-                <input type="number" class="form-control" id="qty" name="quantity" value="{{ isset($vac->quantity) ? $vac->quantity: ''}}" >
+                <input type="number" class="form-control" id="qty" name="quantity" value="{{ isset($vac->quantity) ? $vac->quantity: ''}}">
               </th>
 
               <input type="hidden" value="{{ isset($vac->id) ? $vac->id: ''}}" name="vaccines_id" id="vac_id" > 
@@ -36,29 +36,6 @@
                 </select> 
               </th>
             </tr>
-            <h4>Adjust Inventory</h4>   
-            <tr role="row">
-              <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Adjustment Date: 
-                <input type="date" class="form-control" id="vacname" name="vaccine_name" value="{{ isset($vac->vaccine_name) ? $vac->vaccine_name : ''}}"> </th>
-              </tr>
-              <tr role="row">
-                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Adjustment Reason 
-                  <select class="form-control" name="status" id="stat" data-parsley-required="true"> 
-                    <option value="Available"> New Stock</option> 
-                    <option value="Expired"> Replaced</option> 
-                    <option value="Damaged"> Damaged</option> 
-                    <option value="Returned"> Decreased</option>  
-                  </select> 
-                </th>
-              </tr>
-              <tr role="row">
-                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Current Quantity: </th>
-                <tr role="row">
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Increase Quantity: 
-                    <input type="number" class="form-control" id="vacname" name="vaccine_name" value="{{ isset($vac->vaccine_name) ? $vac->vaccine_name : ''}}"> </th>
-                  </tr>
-                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">New Quantity: </th>
-                         
 
           </thead>
 

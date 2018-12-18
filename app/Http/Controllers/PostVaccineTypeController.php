@@ -48,6 +48,36 @@ class PostVaccineTypeController extends Controller
         return view('pages.vaccinelist', compact('vaccine_lists', 'vaccine_type', 'id_of_vac'));
     }
 
+    public function adjust_inventory(Request $req){
+
+        $this->validate($req,[
+            'adjustment_date' => 'required|date_format:Y-m-d|before:now',
+            'adjustment_reason' => 'required',
+            'increase_amount' => 'required|integer|min:1|max:1000000',
+            'decrease_amount' => 'required|integer|min:1|max:1000000',
+        ]);
+
+            $adjustment_date = $req->input('adjustment_date');
+            $adjustment_reason = $req->input('adjustment_reason');
+            $increase_amount = $req->input('increase_amount');
+            $decrease_amount = $req->input('decrease_amount');
+            $vaccine_types_id = $req->input('vaccine_types_id');
+            $patients_id_vac = $req->input('patients_id');
+
+        DB::table('inventory_adjustments')->insert(
+            
+            [
+                'adjustment_date' => $adjustment_date,
+                'adjustment_reason' => $adjustment_reason,
+                'increase_amount' => $increase_amount,
+                'decrease_amount' => $decrease_amount,
+                'vaccine_types_id' => $vaccine_types_id,
+        ]);
+        
+   session()->flash('updated','Updated!');
+   
+   return redirect()->route('vaccinetypes.index')->with('Success','Vaccine Type Updated!');
+    }
 
     public function add_vaccine(Request $req){
         //Validation   
