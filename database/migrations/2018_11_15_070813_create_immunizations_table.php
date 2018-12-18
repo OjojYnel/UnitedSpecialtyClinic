@@ -15,12 +15,12 @@ class CreateImmunizationsTable extends Migration
     {
         Schema::create('immunizations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('vaccine_type_id')->unsigned();
+            $table->integer('vaccine_types_id')->unsigned();
             $table->integer('patients_id')->unsigned();
             $table->timestamps();
             $table->date('vdate_administered')->notNullable();
 
-            $table->foreign('vaccine_type_id')
+            $table->foreign('vaccine_types_id')
             ->references('id')->on('vaccine_types')
             ->onDelete('restrict')
             ->onUpdate('cascade');

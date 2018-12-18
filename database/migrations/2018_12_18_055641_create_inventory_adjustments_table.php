@@ -19,24 +19,24 @@ class CreateInventoryAdjustmentsTable extends Migration
             $table->enum('adjustment_reason',['New Stock','Replaced','Damaged', 'Decreased']);
             $table->integer('increase_amount');
             $table->integer('decrease_amount');
-            $table->integer('vaccine_types_id')->unasigned();
-            $table->integer('patient_id')->unasigned();
+            $table->integer('vaccine_types_id')->unsigned();
+            $table->integer('patients_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('vaccine_types_id')
+         $table->foreign('vaccine_types_id')
             ->references('id')->on('vaccine_types')
             ->onDelete('restrict')
             ->onUpdate('cascade');
 
-            $table->foreign('patient_id')
-            ->reference('id')->on('patients')
+            $table->foreign('patients_id')
+            ->references('id')->on('patients')
             ->onDelete('restrict')
             ->onUpdate('cascade');
-
             
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

@@ -25,7 +25,7 @@ class CreateReturnTransactionsTable extends Migration
             ->onUpdate('cascade');
 
             $table->foreign('return_id')
-            ->references('id')->on('returns')
+            ->references('id')->on('return_transactions')
             ->onDelete('restrict')
             ->onUpdate('cascade');
         });
