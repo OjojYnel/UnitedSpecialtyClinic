@@ -15,10 +15,25 @@ class CreateInventoryAdjustmentsTable extends Migration
     {
         Schema::create('inventory_adjustments', function (Blueprint $table) {
             $table->increments('id');
-            $table->String("adjustment_reason");
-            $table->integer("increase_amount");
-            $table->integer("decrease_amount");
+            $table->date('adjustment_date');
+            $table->enum('adjustment_reason',['New Stock','Replaced','Damaged', 'Decreased']);
+            $table->integer('increase_amount');
+            $table->integer('decrease_amount');
+            $table->integer('vaccine_types_id')->unasigned();
+            $table->String('patient_id')->unasign();
             $table->timestamps();
+
+            $table->foreign('vaccine_types_id')
+            ->references('id')->on('vaccine_types')
+            ->onDelete('restrict')
+            ->onUpdate('cascade');
+
+            $table->forgein('patient_id'
+            ->reference('id')->on('patients'))
+            ->onDelete('restrict')
+            ->onUpdate('cascade');
+
+            
         });
     }
 
