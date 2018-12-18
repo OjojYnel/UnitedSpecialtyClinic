@@ -28,8 +28,8 @@ class CreateInventoryAdjustmentsTable extends Migration
             ->onDelete('restrict')
             ->onUpdate('cascade');
 
-            $table->forgein('patient_id'
-            ->reference('id')->on('patients'))
+            $table->forgein('patient_id')
+            ->reference('id')->on('patients')
             ->onDelete('restrict')
             ->onUpdate('cascade');
 
