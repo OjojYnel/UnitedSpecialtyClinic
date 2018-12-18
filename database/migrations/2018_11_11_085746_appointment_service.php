@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVaccineTypesTable extends Migration
+class AppointmentService extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,7 @@ class CreateVaccineTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vaccine_types', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('vaccine_type_name');
-            $table->String('vaccine_type_description');
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ class CreateVaccineTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vaccine_types');
+        //
     }
 }

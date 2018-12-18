@@ -15,7 +15,8 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('servie_name');
+            $table->string('service_name');
+            // $table->string('service_type');  //boolean if true = check-up else vaccination
             $table->timestamps();
         });
     }

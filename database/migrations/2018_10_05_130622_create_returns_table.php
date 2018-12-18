@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesTable extends Migration
+class CreateReturnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
+        Schema::create('returns', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('sales_description');
-            $table->integer('service_id')->unsigned();
+            $table->dateTime('return_date');
+            $table->text('reason');
+            $table->dateTime('replacement_date')->nullable();
+            $table->text('status');
+            $table->integer('vaccine_lists_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('service_id')
-            ->references('id')->on('services')
+            $table->foreign('vaccine_lists_id')
+            ->references('id')->on('vaccine_lists')
             ->onDelete('restrict')
             ->onUpdate('cascade');
         });
@@ -33,6 +36,6 @@ class CreateSalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales');
+        Schema::dropIfExists('returns');
     }
 }

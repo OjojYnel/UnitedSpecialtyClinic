@@ -21,7 +21,13 @@ class CreatePatientRecordsTable extends Migration
             $table->float('head_cire');
             $table->float('chest_cire');
             $table->float('abdominal_cire');
+            $table->integer('patient_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('patient_id')
+            ->references('id')->on('patients')
+            ->onDelete('restrict')
+            ->onUpdate('cascade');
         });
     }
 
