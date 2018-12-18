@@ -22,7 +22,6 @@ class CreateEmployeesTable extends Migration
             $table->bigInteger('contact');
             $table->String('username');
             $table->String('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -15,14 +15,7 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('sales_description');
-            $table->integer('service_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('service_id')
-            ->references('id')->on('services')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
         });
     }
 

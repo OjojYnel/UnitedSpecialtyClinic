@@ -17,7 +17,6 @@ class CreatePatientsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->text('patient_lname');
-            $table->text('patient_mname');
             $table->text('patient_fname');
             $table->date('patient_bday');
             $table->string('patient_address');
@@ -26,7 +25,7 @@ class CreatePatientsTable extends Migration
             $table->text('mother_name');
             $table->text('mother_occupation');
             $table->text('father_occupation');
-            $table->biginteger('contact_number');
+            $table->integer('contact_number');
             $table->text('type_of_delivery');
             $table->integer('age');    
         });

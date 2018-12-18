@@ -17,15 +17,10 @@ class CreateReturnsTable extends Migration
             $table->increments('id');
             $table->dateTime('return_date');
             $table->text('reason');
-            $table->dateTime('replacement_date')->nullable();
+            $table->integer('amount_returned');
+            $table->dateTime('replacement_date');
             $table->text('status');
-            $table->integer('vaccine_lists_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('vaccine_lists_id')
-            ->references('id')->on('vaccine_lists')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
         });
     }
 

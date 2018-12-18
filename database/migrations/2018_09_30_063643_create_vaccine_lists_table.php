@@ -16,11 +16,10 @@ class CreateVaccineListsTable extends Migration
         Schema::create('vaccine_lists', function (Blueprint $table) {
             $table->increments('id');
             $table->String('vaccine_name');
-            $table->text('vaccine_lot_number');
-            $table->date('vaccine_receive_date');
-            $table->date('vaccine_expiration_date');
+            $table->String('vaccine_serial');
+            $table->date('adjustment_date');
+            $table->date('adjustment_reason');
             $table->integer('quantity');
-            $table->enum('status',['Available','Damaged','Expired','Returned','Replaced','Consumed']);
             $table->integer('vaccine_types_id')->unsigned();
             $table->timestamps();
 
