@@ -12,21 +12,8 @@ class InventoryTransactionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $vaccine_types = VaccineType::all();
-        $vaccine_list = Vaccines::all();
-        $vaccines = DB::table('vaccine_types')
-        ->Join('vaccine_lists','vaccine_lists.vaccine_types_id','=','vaccine_types.id')
-        ->select('vaccine_types.id','vaccine_types.vaccine_type_name'
-            ,DB::raw('COUNT(CASE WHEN status="Available" THEN 1 END) AS vaccine_count')
-            ,DB::raw('COUNT(CASE WHEN status="Expired" THEN 1 END) AS vaccine_count2')
-            ,DB::raw('COUNT(CASE WHEN status="Returned" THEN 1 END) AS vaccine_count3')
-            ,DB::raw('COUNT(CASE WHEN status="Damaged" THEN 1 END) AS vaccine_count4')
-            ,DB::raw('COUNT(CASE WHEN status="Consumed" THEN 1 END) AS vaccine_count5'))
-        ->groupBy('vaccine_types.id')
-        ->get();
-        
-        return view('pages.inventory_transaction',compact('vaccines'));
+    {        
+        return view('pages.inventory_transaction');
     }
 
     /**

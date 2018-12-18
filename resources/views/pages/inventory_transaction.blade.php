@@ -13,7 +13,7 @@
           
           <div class="box-body">
             <table border="1" id="printTable" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
-              <thead>
+              <thead><h1>NAME OF TYPES<h1>
                 <tr role="row" class="odd">
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Lot Number</th>                  
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Adjustment Date</th>
@@ -21,6 +21,7 @@
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Patient Name</th>
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Increased Amount</th>
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Decreased Amount</th>
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Assistant Responsible</th>
                 </tr>
               </thead>             
               <!--./Fetch data table-start-->

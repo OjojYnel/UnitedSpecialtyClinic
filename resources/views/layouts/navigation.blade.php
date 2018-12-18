@@ -36,6 +36,7 @@
         <ul class="treeview-menu">
           <li><a href="/vaccinetypes"><i class="fa fa-circle-o"></i>Vaccines</a></li>
           <li><a href="/rendered_vaccines"><i class="fa fa-circle-o"></i> Report</a></li>
+          <li><a href="/inventory_transaction"><i class="fa fa-circle-o"></i> Transactions</a></li>
         </ul>
       </li>
       <li class="treeview">
