@@ -17,7 +17,6 @@ class CreateVaccineListsTable extends Migration
             $table->increments('id');
             $table->String('vaccine_name');
             $table->String('vaccine_lot_number');
-            $table->String('vaccine_serial');
             $table->date('vaccine_receive_date');
             $table->date('vaccine_expiration_date');
             $table->integer('quantity');
