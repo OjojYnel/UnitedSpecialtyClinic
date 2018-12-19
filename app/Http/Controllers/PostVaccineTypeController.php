@@ -56,13 +56,13 @@ class PostVaccineTypeController extends Controller
             'increase_amount' => 'required|integer|min:1|max:1000000',
             'decrease_amount' => 'required|integer|min:1|max:1000000',
         ]);
-
             $adjustment_date = $req->input('adjustment_date');
             $adjustment_reason = $req->input('adjustment_reason');
             $increase_amount = $req->input('increase_amount');
             $decrease_amount = $req->input('decrease_amount');
             $vaccine_types_id = $req->input('vaccine_types_id');
-            $patients_id_vac = $req->input('patients_id');
+
+
 
         DB::table('inventory_adjustments')->insert(
             
@@ -76,7 +76,9 @@ class PostVaccineTypeController extends Controller
         
    session()->flash('updated','Updated!');
    
-   return redirect()->route('vaccinetypes.index')->with('Success','Vaccine Type Updated!');
+   return redirect()->route('vaccinetypes.index')->with('Success','Adjustsment Updated!');
+
+
     }
 
     public function add_vaccine(Request $req){

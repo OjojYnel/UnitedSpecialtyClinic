@@ -20,7 +20,6 @@ class CreateInventoryAdjustmentsTable extends Migration
             $table->integer('increase_amount');
             $table->integer('decrease_amount');
             $table->integer('vaccine_types_id')->unsigned();
-            $table->integer('patients_id')->unsigned();
             $table->timestamps();
 
          $table->foreign('vaccine_types_id')
@@ -28,10 +27,7 @@ class CreateInventoryAdjustmentsTable extends Migration
             ->onDelete('restrict')
             ->onUpdate('cascade');
 
-            $table->foreign('patients_id')
-            ->references('id')->on('patients')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
+           
             
         });
     }

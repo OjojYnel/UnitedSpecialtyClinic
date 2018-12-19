@@ -22,7 +22,6 @@ class CreateVaccineListsTable extends Migration
             $table->integer('quantity');
             $table->enum('status',['Available','Damaged','Expired','Returned','Replaced','Consumed']);
             $table->integer('vaccine_types_id')->unsigned();
-            $table->integer('patient_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('vaccine_types_id')
@@ -30,10 +29,6 @@ class CreateVaccineListsTable extends Migration
             ->onDelete('restrict')
             ->onUpdate('cascade');
 
-            $table->foreign('patient_id')
-            ->references('id')->on('patients')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
         });
     }
 

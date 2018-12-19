@@ -3,10 +3,7 @@
 
             <h4>Adjust Inventory</h4>  
 
-            <tr role="row">
-              <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Patient ID: 
-                <input type="number" class="form-control" id="" name="patients_id" value="{{ isset($vac->patients_id_vac) ? $vac->patients_id_vac : ''}}" readonly> </th>
-              </tr>
+            
               <tr role="row">
               <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Vaccine type ID: 
                 <input type="number" class="form-control" id="" name="vaccine_types_id" value="{{ isset($vac->vaccine_types_id) ? $vac->vaccine_types_id : ''}}" readonly> </th>
