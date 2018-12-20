@@ -206,6 +206,4 @@
           })
         </script>
         <!--./Edit Modal Script End -->
-      </body>
-      </html>
       

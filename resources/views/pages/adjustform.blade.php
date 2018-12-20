@@ -1,6 +1,6 @@
 <thead>
 
-
+<form name="" action="POST" action"">
             <h4>Adjust Inventory</h4>  
 
             
@@ -25,19 +25,42 @@
               </tr>
               <tr role="row">
                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Current Quantity: </th>
-                <input type="number" class="form-control" id="" name="quantity" value="{{ isset($vac->quantity) ? $vac->quantity: ''}}" readonly> </th>
+                <input type="number" class="form-control" id="quantity" name="quantity" class="quantity" value="{{ isset($vac->quantity) ? $vac->quantity: ''}}" readonly> </th>
 
                 <tr role="row">
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Increase Quantity: 
-                    <input type="number" class="form-control" id="" name="increase_amount" value="{{ isset($vac->increase_amount) ? $vac->increase_amount : ''}}"> </th>
+                    <input type="number" class="form-control" id="increase_amount" class="quantity" name="increase_amount"/></th>
                   </tr>
                   <tr role="row">
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Decrease Quantity: 
-                    <input type="number" class="form-control" id="" name="decrease_amount" value="{{ isset($vac->decrease_amount) ? $vac->decrease_amount : ''}}"> </th>
+                    <input type="number" class="form-control" id="decrease_amount" class="quantity" name="decrease_amount"/> </th>
                   </tr>
-                         
+                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Result: 
+                    <input type="number" class="form-control" id="sum" name="sum" disabled/> </th>
+                  </tr>
+                         </form>
 
           </thead>
+
+         <script>
+            $(document).ready(function() {
+              //this calculates values automatically 
+              sum();
+            $("#quantity,#increase_amount,#decrease_amount").on("keydown keyup", function() {
+              sum();
+              });
+            });
+
+            function sum() {
+              var quantity = document.getElementById('quantity').value;
+              var increase_amount = document.getElementById('increase_amount').value;
+              var decrease_amount = document.getElementById('decrease_amount').value;
+                var result = (quantity)+ parseInt(increase_amount) - parseInt(decrease_amount);
+              if (!isNaN(result)) {
+                  document.getElementById('sum').value = result;
+              }
+          }
+        </script>
 
 
 
