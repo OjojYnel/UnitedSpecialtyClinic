@@ -1,21 +1,21 @@
 <thead>
 
-<form name="" action="POST" action"">
             <h4>Adjust Inventory</h4>  
 
             
               <tr role="row">
-              <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Vaccine type ID: 
-                <input type="number" class="form-control" id="" name="vaccine_types_id" value="{{ isset($vac->vaccine_types_id) ? $vac->vaccine_types_id : ''}}" readonly> </th>
+              <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Vaccine ID: 
+                <input type="number" class="form-control" value="{{ isset($vac->id) ? $vac->id: ''}}" name="vaccine_lists_id" id="vac_id" readonly> </th>
               </tr>
+           
 
             <tr role="row">
               <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Adjustment Date: 
-                <input type="date" class="form-control" id="" name="adjustment_date" value="{{ isset($vac->adjustment_date) ? $vac->adjustment_date : ''}}"> </th>
+                <input type="date" class="form-control" id="vacadjust" name="adjustment_date" value="{{ isset($vac->adjustment_date) ? $vac->adjustment_date : ''}}"> </th>
               </tr>
               <tr role="row">
                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Adjustment Reason 
-                  <select class="form-control" name="adjustment_reason" id="stat" data-parsley-required="true"> 
+                  <select class="form-control" name="adjustment_reason" id="adjustreason" data-parsley-required="true"> 
                     <option value="Available"> New Stock</option> 
                     <option value="Expired"> Replaced</option> 
                     <option value="Damaged"> Damaged</option> 
@@ -25,20 +25,19 @@
               </tr>
               <tr role="row">
                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Current Quantity: </th>
-                <input type="number" class="form-control" id="quantity" name="quantity" class="quantity" value="{{ isset($vac->quantity) ? $vac->quantity: ''}}" readonly> </th>
-
+                <input type="number" class="form-control" id="qty" name="quantity" value="{{ isset($vac->quantity) ? $vac->quantity: ''}}">
                 <tr role="row">
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Increase Quantity: 
-                    <input type="number" class="form-control" id="increase_amount" class="quantity" name="increase_amount"/></th>
+                    <input type="number" class="form-control" id="increase_amnt" class="quantity" name="increase_amount"/></th>
                   </tr>
                   <tr role="row">
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Decrease Quantity: 
-                    <input type="number" class="form-control" id="decrease_amount" class="quantity" name="decrease_amount"/> </th>
+                    <input type="number" class="form-control" id="decrease_amnt" class="quantity" name="decrease_amount"/> </th>
                   </tr>
                   <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Result: 
                     <input type="number" class="form-control" id="sum" name="sum" disabled/> </th>
                   </tr>
-                         </form>
+                      
 
           </thead>
 

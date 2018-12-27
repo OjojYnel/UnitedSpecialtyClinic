@@ -96,7 +96,7 @@
                       <i class="fa fa-fw fa-edit"> </i>
                     </button>
                   </td>
-                  <td><button  data-toggle="modal" data-target="#adjust">Adjust Here </button></td>
+                  <td><button data-qty="{{$vac->quantity}}"   data-vacid={{$vac->id}} data-toggle="modal" data-target="#adjust">Adjust Here </button></td>
                   @endif  
                 </tr>
                 @endforeach
@@ -162,7 +162,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Changes </button>
+                        <button type="submit" name="adjust_vac" class="btn btn-primary">Save Changes </button>
                       </div>
                     </form>
                   </div>
@@ -206,4 +206,20 @@
           })
         </script>
         <!--./Edit Modal Script End -->
+
+        
+        <!--./Edit Adjust Script Start -->
+        <script>
+          $('#adjust').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+         
+            var qtyno = button.data('qty')           
+            var vac_id = button.data('vacid')
+            var modal = $(this)
+            
+            modal.find('.modal-body #qty').val(qtyno);         
+            modal.find('.modal-body #vac_id').val(vac_id);
+          })
+        </script>
+        <!--./Edit Adjust Script End -->
       
