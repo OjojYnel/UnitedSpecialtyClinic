@@ -45,7 +45,22 @@
           
 
          <script>
-            
+            $(document).ready(function() {
+              //this calculates values automatically 
+              sum();
+            $("#increase_amount,#decrease_amount").on("keydown keyup", function() {
+              sum();
+              });
+            });
+
+            function sum() {
+              var increase_amount = document.getElementById('increase_amount').value;
+              var decrease_amount = document.getElementById('decrease_amount').value;
+                var result = parseInt(increase_amount) + parseInt(decrease_amount);
+              if (!isNaN(result)) {
+                  document.getElementById('sum').value = result;
+              }
+          }
         </script>
 
 
