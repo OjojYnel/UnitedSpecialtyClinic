@@ -47,6 +47,9 @@ class PostVaccineTypeController extends Controller
 
         return view('pages.vaccinelist', compact('vaccine_lists', 'vaccine_type', 'id_of_vac'));
     }
+    
+
+
 
     public function adjust_inventory(Request $req){
 
@@ -60,7 +63,8 @@ class PostVaccineTypeController extends Controller
             $adjustment_reason = $req->input('adjustment_reason');
             $increase_amount = $req->input('increase_amount');
             $decrease_amount = $req->input('decrease_amount');
-            $vaccine_types_id = $req->input('vaccine_types_id');
+            $vaccineid = $req->input('vaccine_lists_id');
+            
 
 
 
@@ -71,7 +75,7 @@ class PostVaccineTypeController extends Controller
                 'adjustment_reason' => $adjustment_reason,
                 'increase_amount' => $increase_amount,
                 'decrease_amount' => $decrease_amount,
-                'vaccine_types_id' => $vaccine_types_id,
+                'vaccine_lists_id' => $vaccineid,
         ]);
         
    session()->flash('updated','Updated!');
